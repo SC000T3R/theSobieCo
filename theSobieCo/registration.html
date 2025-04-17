@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="styles/styles.css">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Conference Registration</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" />
+</head>
+<body>
+  <!-- Simulated Login Check -->
+  <script>
+    // This is where you would check if the user is logged in (e.g., using session/cookies).
+    const isLoggedIn = localStorage.getItem("loggedIn");
+    if (!isLoggedIn) {
+      alert("You must log in before registering.");
+      window.location.href = "login.html";
+    }
+  </script>
+
+  <div class="container mt-5">
+    <h2>Conference Registration</h2>
+    <form action="backend_placeholder.html" method="POST">
+      <div class="mb-3">
+        <label for="fullName" class="form-label">Full Name</label>
+        <input type="text" class="form-control" name="fullName" required />
+      </div>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email Address</label>
+        <input type="email" class="form-control" name="email" required />
+      </div>
+      <div class="mb-3">
+        <label for="institution" class="form-label">Institution / Organization</label>
+        <input type="text" class="form-control" name="institution" />
+      </div>
+      <div class="mb-3">
+        <label for="role" class="form-label">Your Role</label>
+        <select class="form-select" name="role">
+          <option value="faculty">Faculty</option>
+          <option value="student">Student</option>
+          <option value="researcher">Researcher</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary w-100">Register</button>
+    </form>
+  </div>
+</body>
+</html>
